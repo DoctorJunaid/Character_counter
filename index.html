@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #1f1f1f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 3em;
+            margin: 20px 0 30px;
+        }
+
+        textarea {
+            width: 80%;
+            max-width: 800px;
+            height: 300px;
+            border-radius: 30px;
+            font-size: 24px;
+            border: 2px solid #969696;
+            box-shadow: 3px 3px 10px rgb(138, 137, 137);
+            outline: none;
+            padding: 20px;
+        }
+
+        textarea:focus {
+            border-color: #007bff;
+            box-shadow: 3px 3px 10px rgba(0, 123, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            background-color: violet;
+            width: 250px;
+            height: 150px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px violet;
+            border: 2px solid #fff;
+
+        }
+
+        .counter {
+            font-size: 3rem;
+            font-weight: 500px;
+
+        }
+
+        .total_character {
+            font-size: large;
+        }
+
+        .container2 {
+            background-color: yellow;
+            width: 250px;
+            height: 150px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px rgb(238, 209, 130);
+            border: 2px solid #fff;
+
+        }
+
+        .counter2 {
+            font-size: 3rem;
+            font-weight: 500px;
+
+        }
+
+        .words {
+            font-size: large;
+        }
+
+        .max_container {
+            display: flex;
+        }
+
+        .container3 {
+            background-color: orange;
+            width: 250px;
+            height: 150px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px rgb(238, 209, 130);
+            border: 2px solid #fff;
+
+        }
+
+        .counter3 {
+            font-size: 3rem;
+            font-weight: 500px;
+
+        }
+
+        .sentences {
+            font-size: large;
+        }
+        /* Your existing CSS remains the same until the media queries */
+
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+        margin: 15px 0 25px;
+    }
+
+    textarea {
+        width: 90%;
+        height: 450px;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .max_container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container,
+    .container2,
+    .container3 {
+        width: 200px;
+        height: 130px;
+        margin: 15px;
+    }
+
+    .counter,
+    .counter2,
+    .counter3 {
+        font-size: 2.5rem;
+    }
+
+    .total_character,
+    .words,
+    .sentences {
+        font-size: medium;
+    }
+}
+
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8em;
+        margin: 10px 0 20px;
+        padding: 0 10px;
+    }
+
+    textarea {
+        width: 95%;
+        height: 400px;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .max_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container,
+    .container2,
+    .container3 {
+        width: 180px;
+        height: 120px;
+        margin: 10px;
+    }
+
+    .counter,
+    .counter2,
+    .counter3 {
+        font-size: 2.2rem;
+    }
+
+    .total_character,
+    .words,
+    .sentences {
+        font-size: small;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <h1>Analyze your text in real-time</h1>
+    <textarea name="text" id="text"></textarea>
+    <div class="max_container">
+
+
+        <div class="container">
+            <div class="counter">
+                0
+
+            </div><br>
+            <div class="total_character">
+                Total Characters
+            </div>
+        </div>
+        <div class="container2">
+            <div class="counter2">
+                0
+
+            </div><br>
+            <div class="words">
+                Total Words
+            </div>
+        </div>
+        <div class="container3">
+            <div class="counter3">
+                0
+
+            </div><br>
+            <div class="sentences">
+                Total sentences
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        {
+            const counter = document.getElementsByClassName("counter");
+            const textArea = document.getElementById("text");
+            textArea.addEventListener("input", function () {
+                counter[0].innerText = this.value.length;
+            });
+        }
+        {
+            const counter = document.getElementsByClassName("counter2");
+            const textArea = document.getElementById("text");
+
+            textArea.addEventListener("input", function () {
+                const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
+                counter[0].innerText = words.length;
+            })
+        }
+        {
+            const counter = document.getElementsByClassName("counter3");
+            const textArea = document.getElementById("text");
+            textArea.addEventListener("input", function () {
+                const sentences = this.value.trim().split(/[.!?]+/).filter(sentence => sentence.length > 0);
+                counter[0].innerText = sentences.length;
+            })
+        }
+       
+
+
+
+
+
+    </script>
+</body>
+
+</html>
