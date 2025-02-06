@@ -16,8 +16,7 @@
 
 html,
 body {
-    height: 100%;
-    width: 100%;
+   
     background-color: #1f1f1f;
     display: flex;
     flex-direction: column;
@@ -135,7 +134,7 @@ margin: 15px 0 25px;
 }
 
 textarea {
-width: 90%;
+width: 80%;
 height: 450px;
 font-size: 20px;
 padding: 15px;
@@ -176,8 +175,8 @@ padding: 0 10px;
 }
 
 textarea {
-width: 95%;
-height: 200px;
+width: 85%;
+height: 180px;
 font-size: 16px;
 padding: 12px;
 border-radius: 20px;
